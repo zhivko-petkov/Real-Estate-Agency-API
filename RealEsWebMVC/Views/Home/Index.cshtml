@@ -1,0 +1,133 @@
+﻿@model X.PagedList.IPagedList<RealEsWebMVC.ViewModels.OfferVM>
+@{
+    ViewData["Title"] = "ИмотиБГ";
+}
+
+@using X.PagedList.Mvc.Core;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+<h3 id="first-header1">Мечтаният дом е тук</h3>
+<img id="house" src="https://static.vecteezy.com/system/resources/previews/001/200/294/original/house-png.png"/>
+<div class="container">
+    <br />
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+
+            @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "card card-sm" }))
+            {
+                <div class="card-body row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fas fa-search h4 text-body"></i>
+                    </div>
+                    <!--end of col-->
+                    <div class="col">
+
+                        @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "form-control form-control-lg form-control-borderless" })
+                    </div>
+                    <!--end of col-->
+                    <div class="col-auto">
+                        <button class="btn btn-lg btn-success" type="submit">Търси</button>
+                    </div>
+                    <!--end of col-->
+                </div>
+
+            }
+
+        </div>
+        <!--end of col-->
+
+    </div>
+</div>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <img src="@Html.DisplayFor(modelItem => item.Img)" alt="Apartment" style="width:100%">
+            <h2>@Html.DisplayFor(modelItem => item.ApartmentName)</h2>
+            <p class="price">@Html.DisplayFor(modelItem => item.Area) кв.м</p>
+            <p class="price">@Html.DisplayFor(modelItem => item.Price) лв.</p>
+            <p class="price">град @Html.DisplayFor(modelItem => item.TownName)</p>
+            <p>
+                @Html.ActionLink("Редактиране", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Детайли", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Изтрий", "Delete", new { id = item.Id })
+            </p>
+        </div>
+
+    }
+
+    
+</div>
+
+
+
+<br />
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, currentFilter = ViewBag.CurrentFilter }))
+
+
+    <style>
+      /*  .img-style{
+            align-content: center;
+        }*/
+      #first-header1{
+          margin-left: 430px
+      }
+        #house {
+            height: 250px;
+            width: 350px;
+            margin-left: 350px;
+            padding-left: 50px;
+        }
+        .row {
+            padding-top: 50px
+        }
+        /* Clear floats after the columns */
+        .row:after {
+            //content: "";
+            //display: table;
+            //clear: both;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+
+        .card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+            .card button:hover {
+                opacity: 0.7;
+            }
+    </style>
+
+
+
+
+

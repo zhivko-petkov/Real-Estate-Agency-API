@@ -1,0 +1,89 @@
+﻿@model X.PagedList.IPagedList<RealEsWebMVC.ViewModels.ApartmentVM>
+
+@{
+    ViewData["Title"] = "Апартаменти";
+}
+
+
+@using X.PagedList.Mvc.Core;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<h1>Апартаменти</h1>
+
+<p>
+    <a asp-action="Create">Добавяне</a>
+</p>
+@using (Html.BeginForm("Index", "ApartmentController1", FormMethod.Get))
+{
+    <p>
+        Търсене по име: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Търси" />
+    </p>
+}
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <img src="@Html.DisplayFor(modelItem => item.Image)" alt="Apartment" style="width:100%">
+            <h1>@Html.DisplayFor(modelItem => item.ApartmentType)</h1>
+            <p class="price">@Html.DisplayFor(modelItem => item.Area) кв.м</p>
+            <p>@Html.DisplayFor(modelItem => item.Description)</p>
+            <p>
+                @Html.ActionLink("Редактиране", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Детайли", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Изтрий", "Delete", new { id = item.Id })
+                    </p>
+        </div>
+
+    }
+</div>
+
+
+    <br />
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page, currentFilter = ViewBag.CurrentFilter }))
+
+
+<style>
+    .card {
+        float: left;
+        width: 50%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+    }
+
+    .price {
+        color: grey;
+        font-size: 22px;
+    }
+
+    .card button {
+        border: none;
+        outline: 0;
+        padding: 12px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+        font-size: 18px;
+    }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
+</style>

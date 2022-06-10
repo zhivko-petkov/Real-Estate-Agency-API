@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealEsWebAPI", "RealEsWebAPI\RealEsWebAPI.csproj", "{AA356C71-344B-4F1A-B180-6FA0234BBEEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{F4BE6A43-A843-4A77-8EAE-FAF629E76667}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{9CBC98D0-E466-4DFD-8EF8-E03554A9C020}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{E6B508F2-761F-44EE-8728-4F2F6FDB94F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{EFF4123C-C9F3-4054-874E-64F8F68D73B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{A1CE62D1-CC22-4DC7-9F5C-8AD1D25E3371}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEsWebMVC", "RealEsWebMVC\RealEsWebMVC.csproj", "{29547892-5B5A-4200-B718-1B307C11FBA3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA356C71-344B-4F1A-B180-6FA0234BBEEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA356C71-344B-4F1A-B180-6FA0234BBEEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA356C71-344B-4F1A-B180-6FA0234BBEEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA356C71-344B-4F1A-B180-6FA0234BBEEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6B508F2-761F-44EE-8728-4F2F6FDB94F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6B508F2-761F-44EE-8728-4F2F6FDB94F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6B508F2-761F-44EE-8728-4F2F6FDB94F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6B508F2-761F-44EE-8728-4F2F6FDB94F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFF4123C-C9F3-4054-874E-64F8F68D73B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFF4123C-C9F3-4054-874E-64F8F68D73B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFF4123C-C9F3-4054-874E-64F8F68D73B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFF4123C-C9F3-4054-874E-64F8F68D73B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1CE62D1-CC22-4DC7-9F5C-8AD1D25E3371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1CE62D1-CC22-4DC7-9F5C-8AD1D25E3371}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1CE62D1-CC22-4DC7-9F5C-8AD1D25E3371}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1CE62D1-CC22-4DC7-9F5C-8AD1D25E3371}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29547892-5B5A-4200-B718-1B307C11FBA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29547892-5B5A-4200-B718-1B307C11FBA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29547892-5B5A-4200-B718-1B307C11FBA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29547892-5B5A-4200-B718-1B307C11FBA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AA356C71-344B-4F1A-B180-6FA0234BBEEF} = {9CBC98D0-E466-4DFD-8EF8-E03554A9C020}
+		{E6B508F2-761F-44EE-8728-4F2F6FDB94F8} = {F4BE6A43-A843-4A77-8EAE-FAF629E76667}
+		{EFF4123C-C9F3-4054-874E-64F8F68D73B9} = {F4BE6A43-A843-4A77-8EAE-FAF629E76667}
+		{A1CE62D1-CC22-4DC7-9F5C-8AD1D25E3371} = {F4BE6A43-A843-4A77-8EAE-FAF629E76667}
+		{29547892-5B5A-4200-B718-1B307C11FBA3} = {9CBC98D0-E466-4DFD-8EF8-E03554A9C020}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5BA15EC-57C0-47EE-A0BD-028741B88D0D}
+	EndGlobalSection
+EndGlobal
